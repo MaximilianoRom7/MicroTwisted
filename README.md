@@ -1,5 +1,7 @@
 # MicroTwisted
-A Micro Service Written in Twisted, Klein and Flask
+A Micro Service Manager Written in Twisted, Klein and Flask
+
+pip install MicroTwisted
 
 ![Demo](https://i.imgur.com/j4fMKwR.gif)
 
