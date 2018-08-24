@@ -1,6 +1,7 @@
 import sys
 import requests
 from flask import Flask
+from urllib.parse import urlparse
 from MicroTwisted.utils import MicroServiceArgumentParser
 
 
@@ -11,6 +12,8 @@ class Flask(Flask):
         self.app_routes = []
         self.serviceParser = MicroServiceArgumentParser()
         self.serviceArgs, _ = self.serviceParser.parse_known_args()
+        self.master_url = urlparse(self.serviceArgs.service_register)
+        self.master_url = str(self.master_url.scheme) + "://" + str(self.master_url.netloc)
         return super(Flask, self).__init__(*args, **kwargs)
 
     def running_url(self, host, port):
